@@ -1,0 +1,440 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="bg-white shadow-md" id="Categories_section">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <!-- <div class="text-2xl font-semibold">Brand</div> -->
+            <ul class="flex space-x-6">
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">ALL</button>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Mobiles</button>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Fashion</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-md p-4 mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Men</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Women</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kids</a>
+                    </div>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Electronics</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-md p-4 mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Laptops</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mobiles</a>
+                    </div>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Home decor</button>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Appliances</button>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Gaming kit</button>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">Beauty, Toys & More</button>
+                </li>
+                <li class="group relative">
+                    <button class="font-medium hover:text-blue-500">kitchen</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>
+    <section>             
+        <!-- Sideling Banner -->
+        <div class="sideling-banner">
+            <!-- <button class="scroll-btn left-btn" onclick="scrollLeft()">&#8592;</button> -->
+            <div class="slide"><img src="banner1.jpg" alt="Banner 1"></div>
+            <div class="slide"><img src="banner2.jpg" alt="Banner 2"></div>
+            <div class="slide"><img src="banner3.jpg" alt="Banner 3"></div>
+        </div> 
+        <!-- <button class="scroll-btn right-btn" onclick="scrollRight()">&#8594;</button> -->
+    </section>
+</div>
+ 
+
+    <!-- bottom navbar -->
+
+    
+<div class="bottom-navbar">
+    <div class="nav-item">
+        <i class="icon">🔘</i>
+        <!-- <span>Switch Stores</span> -->
+    </div>
+    <div class="nav-item">
+        <i class="icon">🏬</i>
+        <!-- <span>Explore</span> -->
+    </div>
+    <div class="nav-item">
+        <i class="icon">🅶</i>
+        <!-- <span>Gen Z Store</span> -->
+    </div>
+    <div class="nav-item">
+        <i class="icon">📊</i>
+        <!-- <span>Categories</span> -->
+    </div>
+    <div class="nav-item">
+        <i class="icon">👤</i>
+        <!-- <span>Account</span> -->
+    </div>
+</div>
+</section>
+
+<!-- deals container -->
+
+<div class="container">
+    <div class="section">
+        <h3>Best Quality</h3>
+        <div class="product">
+            <img src="earphone.jpg" alt="Wired Earphones">
+            <p>Wired Earphones<br><span class="price">Top Sellers</span></p>
+        </div>
+        <div class="product">
+            <img src="shoes.jpg" alt="Men's Sports Shoes">
+            <p>Men's Sports Shoes<br><span class="price">Trending</span></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Suggested for You</h3>
+        <div class="product">
+            <img src="phone_cover.jpg" alt="Phone Cover">
+            <p>Wellchoice Back Cover<br><span class="price">73% off</span></p>
+        </div>
+        <div class="product">
+            <img src="vaprif_cover.jpg" alt="VAPRIF Back Cover">
+            <p>VAPRIF Back Cover<br><span class="price">82% off</span></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>More to Explore</h3>
+        <div class="product">
+            <img src="campus_shoes.jpg" alt="Campus Shoes">
+            <p>CAMPUS Men's Sports Shoes<br><span class="price">48% off</span></p>
+        </div>
+        <div class="product">
+            <img src="nike_shoes.jpg" alt="Nike Shoes">
+            <p>NIKE Men's Sports Shoes<br><span class="price">48% off</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- product cards  -->
+<h1 class="text-2xl font-bold text-center mb-8">BABA ke deals</h1>
+<div class="scroll-container">
+    
+    {% for product in products %}
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="{{ product.image.url }}" alt="T shrits" width="100px">
+        <h2 class="title">{{ product.name }}</h2>
+        <p class="subtitle">{{ product.description }}</p>
+        <p class="price">{{ product.price }}</p>
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}">View Product</a></div>
+        </div>
+    </div>
+    {% endfor %}
+    
+
+
+
+</div>
+
+<!-- product cards  -->
+<h1 class="text-2xl font-bold text-center mb-8">BABA ke deals</h1>
+<div class="scroll-container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="/" alt="T shrits">
+        <h2 class="title">T shrits</h2>
+        <p class="subtitle">Jockey, Jack & Jones & More</p>
+        <p class="price">Starting ₹199*</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="/" alt="Boxers">
+        <h2 class="title">Boxers</h2>
+        <p class="subtitle">XYXX, U.S. Polo Assn. & More</p>
+        <p class="price">Starting ₹149*</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="/" alt="Briefs">
+        <h2 class="title">Briefs & More</h2>
+        <p class="subtitle">Pepe Jeans & More</p>
+        <p class="price">30-60% Off*</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 5 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 6 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 7 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+ <!-- Card 8 -->
+ <div class="card">
+    <img src="/" alt="Vests">
+    <h2 class="title">Vests</h2>
+    <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+    <p class="price">Under ₹399*</p>
+</div>
+
+
+
+</div>
+
+<!-- product cards  -->
+<h1 class="text-2xl font-bold text-center mb-8">BABA ke deals</h1>
+<div class="scroll-container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="/" alt="T shrits">
+        <h2 class="title">T shrits</h2>
+        <p class="subtitle">Jockey, Jack & Jones & More</p>
+        <p class="price">Starting ₹199*</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="/" alt="Boxers">
+        <h2 class="title">Boxers</h2>
+        <p class="subtitle">XYXX, U.S. Polo Assn. & More</p>
+        <p class="price">Starting ₹149*</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="/" alt="Briefs">
+        <h2 class="title">Briefs & More</h2>
+        <p class="subtitle">Pepe Jeans & More</p>
+        <p class="price">30-60% Off*</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 5 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 6 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 7 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+ <!-- Card 8 -->
+ <div class="card">
+    <img src="/" alt="Vests">
+    <h2 class="title">Vests</h2>
+    <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+    <p class="price">Under ₹399*</p>
+</div>
+
+
+
+</div>
+
+<!-- product cards  -->
+<h1 class="text-2xl font-bold text-center mb-8">BABA ke deals</h1>
+<div class="scroll-container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="/" alt="T shrits">
+        <h2 class="title">T shrits</h2>
+        <p class="subtitle">Jockey, Jack & Jones & More</p>
+        <p class="price">Starting ₹199*</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="/" alt="Boxers">
+        <h2 class="title">Boxers</h2>
+        <p class="subtitle">XYXX, U.S. Polo Assn. & More</p>
+        <p class="price">Starting ₹149*</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="/" alt="Briefs">
+        <h2 class="title">Briefs & More</h2>
+        <p class="subtitle">Pepe Jeans & More</p>
+        <p class="price">30-60% Off*</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 5 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 6 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 7 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+ <!-- Card 8 -->
+ <div class="card">
+    <img src="/" alt="Vests">
+    <h2 class="title">Vests</h2>
+    <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+    <p class="price">Under ₹399*</p>
+</div>
+
+
+
+</div>
+
+<!-- product cards  -->
+<h1 class="text-2xl font-bold text-center mb-8">BABA ke deals</h1>
+<div class="scroll-container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="/" alt="T shrits">
+        <h2 class="title">T shrits</h2>
+        <p class="subtitle">Jockey, Jack & Jones & More</p>
+        <p class="price">Starting ₹199*</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="/" alt="Boxers">
+        <h2 class="title">Boxers</h2>
+        <p class="subtitle">XYXX, U.S. Polo Assn. & More</p>
+        <p class="price">Starting ₹149*</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="/" alt="Briefs">
+        <h2 class="title">Briefs & More</h2>
+        <p class="subtitle">Pepe Jeans & More</p>
+        <p class="price">30-60% Off*</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 5 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 6 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+     <!-- Card 7 -->
+     <div class="card">
+        <img src="/" alt="Vests">
+        <h2 class="title">Vests</h2>
+        <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+        <p class="price">Under ₹399*</p>
+    </div>
+ <!-- Card 8 -->
+ <div class="card">
+    <img src="/" alt="Vests">
+    <h2 class="title">Vests</h2>
+    <p class="subtitle">Van Heusen, U.S. Polo Assn. & More</p>
+    <p class="price">Under ₹399*</p>
+</div>
+
+
+
+</div>
+<script>
+  
+    const container = document.getElementById('scrollContainer');
+
+    function scrollLeft() {
+        container.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+        container.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+    function autoScroll() {
+  window.scrollBy(0, 5); // Scrolls 5px
+  if (window.scrollY + window.innerHeight < document.body.scrollHeight) {
+    setTimeout(autoScroll, 50);
+  }
+}
+</script>
+{% endblock %}

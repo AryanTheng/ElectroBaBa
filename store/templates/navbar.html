@@ -1,0 +1,68 @@
+<nav>
+    <ul>
+       
+        <li class="hideonDestop" onclick=showSidebar()><a  href="#menu"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 5 20 24">
+            <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+            </svg></a></li>
+            <li><h2 class="logo">DROPSHIP</h2></li>
+
+        <!-- <li class="hideonMoblie" ><a  href="#home">Home</a></li> -->
+        <li class="searchBar">
+            <input type="text" placeholder="Search for products..." />
+            <button type="submit">Search</button>
+            
+        </li>
+        
+        <li class="hideonMoblie">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" id="servicesShift">sign-in</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">sign-up</a></li>
+            {% endif %}
+        <li class="addToCartBtn">
+            <a href="#cart">
+                <div class="cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 10 600 500"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#000000" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                    <p>{{ cart|length }}</p>
+                </div></a>
+        </li>
+        <!-- <li class="hideonMoblie">
+            <a href="#dropdown" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+    </ul> -->
+    
+    <ul class="sideBar">
+        <li  id="crossbtn" onclick=hideSidebar()><a  href="#"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="30" height="30.000000pt" viewBox="0 0 50 50"
+            preserveAspectRatio="xMidYMid meet">
+           
+           <g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
+           fill="#000000" stroke="none">
+           <path d="M40 250 l0 -210 210 0 210 0 0 210 0 210 -210 0 -210 0 0 -210z m400
+           0 l0 -190 -190 0 -190 0 0 190 0 190 190 0 190 0 0 -190z"/>
+           <path d="M150 343 c0 -4 19 -27 42 -50 l42 -43 -44 -45 c-57 -58 -43 -72 15
+           -15 l45 44 45 -44 c24 -24 48 -41 52 -37 4 4 -13 28 -37 52 l-44 45 44 45 c57
+           58 43 72 -15 15 l-45 -44 -43 42 c-41 40 -57 50 -57 35z"/>
+           </g>
+           </svg></a></li>
+        <li><a href="#about">About</a></li>
+        
+        <li ><a  href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a href="#dropdown" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+    </ul>
+  
+</nav>
